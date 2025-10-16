@@ -1,0 +1,25 @@
+# Arquivos de ambiente
+backend/.env
+backend/codigo.env
+
+# Node modules
+node_modules/
+*/node_modules/
+
+# Logs
+*.log
+
+# dotenv environment variables file
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
