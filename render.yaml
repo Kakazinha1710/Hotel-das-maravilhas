@@ -1,0 +1,45 @@
+# Render Blueprint for full-stack app (Node.js API + Vite React static site)
+
+services:
+  # Backend API (Express)
+  - type: web
+    name: hotel-maravilhas-api
+    env: node
+    rootDir: backend
+    buildCommand: npm ci
+    startCommand: npm start
+    autoDeploy: true
+    # Set environment variables in the Render Dashboard after creating from this blueprint
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: FRONTEND_URL
+        # After deploying the frontend, set this to its Render URL (e.g., https://hotel-frontend.onrender.com)
+        value: https://your-frontend-onrender.com
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_ANON_KEY
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: JWT_EXPIRES_IN
+        value: 7d
+
+  # Frontend (Vite) as Static Site
+  - type: static
+    name: hotel-maravilhas-frontend
+    rootDir: frontend
+    buildCommand: npm ci && npm run build
+    publishPath: dist
+    # Set this after backend is live (or redeploy). During the first deploy you can leave a placeholder.
+    envVars:
+      - key: VITE_API_URL
+        value: https://your-backend-onrender.com/api
+      - key: VITE_APP_NAME
+        value: Hotel das Maravilhas
+      - key: VITE_APP_VERSION
+        value: 1.0.0
+
+
