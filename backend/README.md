@@ -161,3 +161,7 @@ curl -X GET http://localhost:3000/api/usuarios/profile \
 A API inclui logs de requisições e tratamento de erros para facilitar o debug e monitoramento.
 
 
+
+
+
+

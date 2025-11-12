@@ -1,6 +1,6 @@
 import React from 'react';
 import { useAuth } from '../contexts/AuthContext';
-import { User, Mail, Phone, MapPin, Calendar, Shield } from 'lucide-react';
+import { User, Mail, MapPin, Calendar, Shield } from 'lucide-react';
 
 const Dashboard: React.FC = () => {
   const { user } = useAuth();
@@ -165,5 +165,9 @@ const Dashboard: React.FC = () => {
 };
 
 export default Dashboard;
+
+
+
+
 
 

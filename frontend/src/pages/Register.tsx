@@ -14,10 +14,9 @@ const Register: React.FC = () => {
     register,
     handleSubmit,
     formState: { errors },
-    watch,
   } = useForm<RegisterData>();
 
-  const password = watch('senha');
+  // const password = watch('senha'); // Reservado para validação de confirmação de senha no futuro
 
   const onSubmit = async (data: RegisterData) => {
     const success = await registerUser(data);
@@ -252,5 +251,9 @@ const Register: React.FC = () => {
 };
 
 export default Register;
+
+
+
+
 
 
